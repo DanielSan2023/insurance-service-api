@@ -9,4 +9,6 @@ import org.springframework.stereotype.Component;
 public interface PoistenecRepository extends JpaRepository<Poistenec, Long> {
 
     boolean existsByRodneCislo(String rodneCislo);
+
+    boolean existsByEmail(String email);
 }

@@ -44,6 +44,7 @@ public class PoistenecServiceImpl implements PoistenecService {
         Poistenec poistenec = modelMapper.map(dto, Poistenec.class);
 
         poistenecValidator.checkForDuplicateRodneCislo(poistenec.getRodneCislo());
+        poistenecValidator.checkForDuplicateEmail(poistenec.getEmail());
         poistenecValidator.checkIfKorespondencnaAdresaIsNull(poistenec);
 
         poistenecRepository.save(poistenec);

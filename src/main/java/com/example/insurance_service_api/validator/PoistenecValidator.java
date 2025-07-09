@@ -22,7 +22,13 @@ public class PoistenecValidator {
 
     public void checkForDuplicateRodneCislo(String rodneCislo) {
         if (poistenecRepository.existsByRodneCislo(rodneCislo)) {
-            throw new IllegalArgumentException(PoistenecConstants.DUPLICATE_RODNE_CISLO_EXCEPTION);
+            throw new IllegalArgumentException(String.format(PoistenecConstants.DUPLICATE_RODNE_CISLO_EXCEPTION, rodneCislo));
+        }
+    }
+
+    public void checkForDuplicateEmail(String email) {
+        if (poistenecRepository.existsByEmail(email)) {
+            throw new IllegalArgumentException(String.format(PoistenecConstants.DUPLICATE_EMAIL_ADDRESS_EXCEPTION, email));
         }
     }
 
@@ -34,7 +40,7 @@ public class PoistenecValidator {
 
     public void validatePoistenciExist(List<Poistenec> poistenci) {
         if (poistenci.isEmpty()) {
-            throw new EntityNotFoundException(PoistenecConstants.POISTENCI_NOT_FOUND);
+            throw new EntityNotFoundException(String.format(PoistenecConstants.POISTENCI_NOT_FOUND));
         }
     }
 }
