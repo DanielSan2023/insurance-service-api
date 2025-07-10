@@ -8,23 +8,27 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@DiscriminatorValue("MAJETOK")
+@DiscriminatorValue("PoistenieMajetku")
 public class PoistenieMajetku extends Zmluva {
 
+    @Column(nullable = false)
+    private LocalDate datumKonca;
+
     @Enumerated(EnumType.STRING)
-    @NotNull
+    @Column(nullable = false)
     private TypNehnutelnosti typNehnutelnosti;
 
     @Embedded
-    @NotNull
+    @Column(nullable = false)
     private Adresa adresaNehnutelnosti;
 
-    @NotNull
+    @Column(nullable = false)
     private BigDecimal hodnotaNehnutelnosti;
 }

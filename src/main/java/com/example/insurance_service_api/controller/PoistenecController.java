@@ -23,19 +23,19 @@ public class PoistenecController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PoistenecListDto>> getAll() {
+    public ResponseEntity<List<PoistenecListDto>> getAllPoistenci() {
         List<PoistenecListDto> poistenci = poistenecService.getAllPoistenci();
         return ResponseEntity.ok(poistenci);
     }
 
     @PostMapping
-    public ResponseEntity<Long> create(@RequestBody @Valid PoistenecCreateDto dto) {
+    public ResponseEntity<Long> createPoistenec(@RequestBody @Valid PoistenecCreateDto dto) {
         PoistenecDtoIdentifikator poistenec = poistenecService.createPoistenec(dto);
         return ResponseEntity.ok(poistenec.getId());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PoistenecFullDto> getById(@PathVariable Long id) {
+    public ResponseEntity<PoistenecFullDto> getPoistenecById(@PathVariable Long id) {
         PoistenecFullDto poistenec = poistenecService.getPoistenecById(id);
         return ResponseEntity.ok(poistenec);
     }
