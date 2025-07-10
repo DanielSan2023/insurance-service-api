@@ -2,9 +2,13 @@ package com.example.insurance_service_api.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdresaDto {
 
     @NotBlank(message = "PSC je povinny udaj.")

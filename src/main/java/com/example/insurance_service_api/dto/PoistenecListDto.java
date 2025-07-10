@@ -9,4 +9,6 @@ public class PoistenecListDto {
     private String priezvisko;
     private String rodneCislo;
     private String email;
+    private AdresaDto adresaTrvalehoPobytu;
+    private AdresaDto korespondencnaAdresa;
 }

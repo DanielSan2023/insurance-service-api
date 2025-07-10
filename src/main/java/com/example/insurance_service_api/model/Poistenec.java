@@ -18,6 +18,7 @@ public class Poistenec {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
+    @Column(nullable = false, unique = true)
     private Long id;
 
     @Column(nullable = false)
