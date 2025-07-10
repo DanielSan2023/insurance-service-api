@@ -28,7 +28,7 @@ public class PoistenecValidator {
 
     public void checkForDuplicateEmail(String email) {
         if (poistenecRepository.existsByEmail(email)) {
-            throw new IllegalArgumentException(String.format(PoistenecConstants.DUPLICATE_EMAIL_ADDRESS_EXCEPTION, email));
+            throw new IllegalArgumentException(String.format(String.format(PoistenecConstants.DUPLICATE_EMAIL_ADDRESS_EXCEPTION, email)));
         }
     }
 
